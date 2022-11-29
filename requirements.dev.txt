@@ -3,9 +3,3 @@ pytest
 isort
 black
 flake8
-flake8-black
-flake8-length
-flake8-isort
-dlint
-pep8-naming
-flake8-pytest
