@@ -17,10 +17,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.9
@@ -29,14 +27,7 @@ jobs:
         python-version: "3.9"
     - name: Install dependencies
       run: |
-        apt update
-        apt install -y libgl1-mesa-glx libjpegturbo-dev
+        sudo apt update
+        sudo apt install -y libgl1-mesa-glx libjpegturbo-dev
         python -m pip install --upgrade pip
         if [ -f requirements.dev.txt]; then pip install -r requirements.dev.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 --max-line-length 89 --extend-ignore "T003,Q000,E203,W503,E501,W505,Q000,LN001,S101,N806,PIE786,N815,VNE003,R504" --test-func-name-validator-regex="test_.*" ${LINT_DIR}
-    - name: Test with pytest
-      run: |
-        pytest -svvv ${TEST_DIR}
