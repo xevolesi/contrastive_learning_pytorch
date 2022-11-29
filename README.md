@@ -13,7 +13,7 @@ just to use conda:
 
         pip install -r requirements.txt
 
-   If you want to develop this repo further the install dev-dependencies by
+   If you want to develop this repo further then install dev-dependencies by
    running:
 
         pip install -r requirements.dev.txt
