@@ -32,6 +32,8 @@ jobs:
         sudo apt install -y libgl1-mesa-glx libturbojpeg-dev
         python -m pip install --upgrade pip
         pip install -r requirements.dev.txt
+    - name: Check lint with flake8
+      run: |
         flake8 --max-line-length 89  --extend-ignore "T003,Q000,E203,W503,E501,W505,Q000,LN001,S101,N806,PIE786,N815,VNE003,R504" ${LINT_DIR}
     - name: Test with pytest
       run: |
