@@ -28,6 +28,6 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y libgl1-mesa-glx libjpegturbo-dev
+        sudo apt install -y libgl1-mesa-glx libturbojpeg-dev
         python -m pip install --upgrade pip
-        if [ -f requirements.dev.txt]; then pip install -r requirements.dev.txt; fi
+        pip install -r requirements.dev.txt; fi
