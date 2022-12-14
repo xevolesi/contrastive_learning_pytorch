@@ -17,3 +17,13 @@ just to use conda:
    running:
 
         pip install -r requirements.dev.txt
+
+# How to train on CIFAR10?
+To get `CIFAR10` in desired format you can just use script `scripts/cifar10.py`.
+Just run it with the following command:
+
+```bash
+python scripts/cifar10.py \
+        -- download_path %path to download CIFAR10 from torchvision$ \
+        --target_path %path to store dataset in desired format%
+```
